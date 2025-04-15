@@ -1,107 +1,114 @@
 [![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
 
-# CacheTest
+<!-- # 2024.0691 -->
 
-This archive is distributed in association with the [INFORMS Journal on
-Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
+# Fast Association Recovery in High Dimensions by Parallel Learning
 
-The software and data in this repository are a snapshot of the software and data
-that were used in the research reported on in the paper 
-[This is a Template](https://doi.org/10.1287/ijoc.2019.0000) by T. Ralphs. 
-The snapshot is based on 
-[this SHA](https://github.com/tkralphs/JoCTemplate/commit/f7f30c63adbcb0811e5a133e1def696b74f3ba15) 
-in the development repository. 
+This archive is distributed in association with the [INFORMS Journal on Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
 
-**Important: This code is being developed on an on-going basis at 
-https://github.com/tkralphs/JoCTemplate. Please go there if you would like to
-get a more recent version or would like support**
+The software and data in this repository are a snapshot of the software and data that were used in the research reported in the paper [Fast Association Recovery in High Dimensions by Parallel Learning](href) by Ruipeng Dong, and Canhong Wen.
 
 ## Cite
 
 To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
 
-https://doi.org/10.1287/ijoc.2019.0000
+https://doi.org/xxx/xxx
 
-https://doi.org/10.1287/ijoc.2019.0000.cd
+https://doi.org/xxx/xxx.cd
 
 Below is the BibTex for citing this snapshot of the repository.
 
 ```
-@misc{CacheTest,
-  author =        {T. Ralphs},
-  publisher =     {INFORMS Journal on Computing},
-  title =         {{CacheTest}},
-  year =          {2020},
-  doi =           {10.1287/ijoc.2019.0000.cd},
-  url =           {https://github.com/INFORMSJoC/2019.0000},
-  note =          {Available for download at https://github.com/INFORMSJoC/2019.0000},
+@misc{cospa2025,
+  author    = {Ruipeng Dong and Canhong Wen},
+  publisher = {INFORMS Journal on Computing},
+  title     = {Fast Association Recovery in High Dimensions by Parallel Learning},
+  year      = {2025},
+  doi       = {xxxx},
+  note      = {Available for download at: https://github.com/INFORMSJoC/xxxx},
 }  
 ```
 
-## Description
+## Required Packages
+We use R language for the numerical simulations and real-world data analysis. To run this project, make sure you have the following R packages installed. You can install them using:
 
-The goal of this software is to demonstrate the effect of cache optimization.
-
-## Building
-
-In Linux, to build the version that multiplies all elements of a vector by a
-constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
-paper), stepping K elements at a time, execute the following commands.
-
-```
-make mult
-```
-
-Alternatively, to build the version that sums the elements of a vector (used
-to obtain the results [Figure 2](results/sum-test.png) in the paper), stepping K
-elements at a time, do the following.
-
-```
-make clean
-make sum
+```R
+install.packages("devtools")
+install.packages("glmnet")
+install.packages("MASS")
+install.packages("scalreg")
+install.packages("rrpack")
+install.packages("secure")
+install.packages("Rcpp")
+install.packages("RcppArmadillo")
+install.packages("foreach")
+install.packages("doParallel")
+install.packages("egg")
+install.packages("ggplot2")
 ```
 
-Be sure to make clean before building a different version of the code.
+## Folders Organization
 
-## Results
+- folder <code>data</code>: an expression quantitative trait loci data for the real-world data analysis
+- folder <code>results</code>:
+  - subfolder <code>figures</code>: including all figures of the paper
+  - subfolder <code>raw</code>: including all raw results of simulations and real-world data analysis that can be converted to the figures and tables in our paper
+  - subfolder <code>tables</code>: including all tables of the paper
+- folder <code>scripts</code>: including all scripts for running the simulation and data analysis in this paper
+  - subfolder <code>yeast</code>: including all scripts of the real-world data analysis 
+- folder <code>src</code>: the source codes of our R package named by <code>cospa</code>
 
-Figure 1 in the paper shows the results of the multiplication test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
+## Running the Project
 
-![Figure 1](results/mult-test.png)
+> [!CAUTION]
+> We use parallel computing to speed up simulations. The number of cores is set by the variable <code>cl.num</code> in each script, with a default value of 50. Please set the number of cores suitable for your computing platform.
 
-Figure 2 in the paper shows the results of the sum test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
+### Step 1: Installing R package 
+To perform all experiments, please install our R package <code>cospa</code> first:
 
-![Figure 1](results/sum-test.png)
-
-## Replicating
-
-To replicate the results in [Figure 1](results/mult-test), do either
-
-```
-make mult-test
-```
-or
-```
-python test.py mult
-```
-To replicate the results in [Figure 2](results/sum-test), do either
-
-```
-make sum-test
-```
-or
-```
-python test.py sum
+```R
+devtools::install_github("INFORMSJoC/2024.0691/src")
 ```
 
-## Ongoing Development
+### Step 2: Running Scripts
 
-This code is being developed on an on-going basis at the author's
-[Github site](https://github.com/tkralphs/JoCTemplate).
+> * All numerical results can be generated by the "pipeline.R" in the scripts folder. 
+> * All results are stored in the results folder. 
+> * For each script, the variable <code>path</code> corresponds to the absolute path of the folder 2024.0691.
+> * For details, we introduce the usage of each scripts in the scripts folder as follows.
 
-## Support
+#### (1) Numerical simulations
+> 
+> (a) To generate all raw simulation results, run the following scripts from the scripts folder:
+> 
+> ```R
+> source("scripts/sim-table.R") # generate all table results
+> source("scripts/sim-time.R") # generate the time comparison result
+> source("scripts/sim-vary.R") # generate the boxplot results
+> ```
+> 
+> (b) After obtaining the raw simulation results, run the following scripts from the scripts folder to generate tables, line and box plots:
+> 
+> ```R
+> source("scripts/get-table.R") # generate latex files summarizing error tables 
+> source("scripts/get-line.R") # generate the time performance figures
+> source("scripts/get-box.R") # generate the box plots
+> ```
 
-For support in using this software, submit an
-[issue](https://github.com/tkralphs/JoCTemplate/issues/new).
+#### (2) Real data analysis
+To obtain the real data result, run the following scripts from the subfolder "/yeast" in the scripts folder:
+
+> (a) First, run the script "data_clean.R" to obtain the screened data that translate "/data/yeast.rda" into "/output/yeast_preprocess_data.RData".
+> ```R
+> source("scripts/yeast/data_clean.R") # clean the data and save the screened data as "yeast_preprocess_data.RData" into the data folder
+> ```
+> 
+> (b) After obtaining the screened data, run the script "/yeast/analysis.R" that estimate models by "yeast_preprocess_data.RData".
+> ```R
+> source("scripts/yeast/analysis.R") # compare the estimations of different methods, and save the result as table-real-screening.RData
+> ```
+> 
+> (c) Finally, to obtain the summary table in our paper, run the script "/yeast/get-table-real.R" that outputs a latex file including the summary table.
+> ```R
+> source("scripts/yeast/get-table-real.R")
+> ```

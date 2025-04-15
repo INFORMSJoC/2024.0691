@@ -1,0 +1,16 @@
+Package: cospa
+Type: Package
+Title: Co-sparse matrix decompostion
+Version: 0.1
+Date: 2022-06-24
+Author: Ruipeng Dong
+Maintainer: Ruipeng Dong <drp@mail.ustc.edu.cn>
+Description: A parallel pursuit for the sparse matrix decomposition. 
+License: GPL (>= 3.0)
+Imports: Rcpp (>= 1.0.8)
+Depends: glmnet, MASS, scalreg
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 7.2.3
+Encoding: UTF-8
+NeedsCompilation: yes
+Packaged: 2024-03-20 02:18:59 UTC; dongr
