@@ -1,2 +1,8 @@
 *.Rout
 .Rhistory
+.Rproj.user
+*.tar.gz
+.Rbuildignore
+*.Rproj
+*.Rcheck
+*.o
