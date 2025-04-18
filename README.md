@@ -8,6 +8,9 @@ This archive is distributed in association with the [INFORMS Journal on Computin
 
 The software and data in this repository are a snapshot of the software and data that were used in the research reported in the paper [Fast Association Recovery in High Dimensions by Parallel Learning](href) by Ruipeng Dong, and Canhong Wen.
 
+**Important: This code is only be used to reproduce the results of the paper, and we will not maintain this project continuously. 
+If there is any bug, please email [Ruipeng Dong](drp@ustc.edu.cn).
+
 ## Cite
 
 To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
