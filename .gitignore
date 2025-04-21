@@ -7,3 +7,5 @@
 *.Rcheck
 *.o
 *.html
+RcppExports.cpp
+RcppExports.R

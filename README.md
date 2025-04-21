@@ -32,7 +32,7 @@ Below is the BibTex for citing this snapshot of the repository.
 }  
 ```
 
-## Required Packages
+## Required Packages and Tools
 We use R language for the numerical simulations and real-world data analysis. To run this project, make sure you have the following R packages installed. You can install them using:
 
 ```R
@@ -49,6 +49,7 @@ install.packages("doParallel")
 install.packages("egg")
 install.packages("ggplot2")
 ```
+> **Note**: Besides the above packages, we also need [Rtools](https://cran.r-project.org/bin/windows/Rtools/) installed to compile our R package <code>cospa</code>.
 
 ## Folders Organization
 
