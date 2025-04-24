@@ -1,13 +1,5 @@
 ## Description 
 
-The data <code>yeast.rda</code> comes from [KEGG database](https://www.kegg.jp/pathway/sce04011),
-which belongs to the yeast Mitogen-activated protein kinases (MAPKs) signaling pathway. Please refer 
-the paper of Kanehisa et al. (2010) for details. <code>yeast_preprocess_data.RData</code> can be obtained by the script <code>data_clean.R</code> in the folder <code>scripts/yeast</code>, which preprocesses the raw data <code>yeast.rda</code>, and results in a screened dataset. 
+The real data utilized in this paper were sourced from the [KEGG database](https://www.kegg.jp), which is not publicly accessible. To obtain the data, please subscribe to the [KEGG FTP service](https://www.kegg.jp/kegg/download/) first. After subscription, navigate to the "pathway" subdirectory (refer to [MAPK signaling pathway - yeast](https://www.kegg.jp/pathway/sce04011)) and download the MAPK pathway of yeast as a text file (.txt file). For the MAPK pathway of yeast, we treated markers and expression levels as covariates and responses, respectively. Markers were encoded as binary variables (1 and 2). A preliminary screening process was then conducted to eliminate redundant variables, thereby reducing the dimensionality of the dataset to a modest scale. Using the preprocessed data, we evaluated the performance of our proposed method and compared it with other competing methods. 
 
-## Reference 
-
-- Kanehisa, M., Goto, S., Furumichi, M., Tanabe, M., & Hirakawa, M. (2010). KEGG for 
-representation and analysis of molecular networks involving diseases and drugs. Nucleic acids research, 38(suppl_1), D355-D360.
-
-> **Note**: [KEGG database](https://www.kegg.jp/pathway/sce04011) is not a public database but 
-> academic users may freely use the KEGG website, and please abid [the license of KEGG](https://www.kegg.jp/kegg/legal.html). 
+> **Note**: Please adhere to [the KEGG license terms](https://www.kegg.jp/kegg/legal.html) for database usage. 
