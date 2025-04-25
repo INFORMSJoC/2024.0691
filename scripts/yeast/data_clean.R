@@ -1,6 +1,5 @@
 ## This script is used to clean raw data and perform marginal screening
-## This script require loading of "supplement_scripts/yeast/RData/yeast.rda"
-## The collected data is saved as "yeast_full_data.RData" and "yeast_preprocess_data.RData"
+## The cleaned data is saved as "yeast_preprocess_data.RData"
 rm(list = ls())
 cat('\f')
 
@@ -8,7 +7,12 @@ path <- "~/"
 path <- paste0(path, "2024.0691/scripts/")
 setwd(path)
 
-load("../data/yeast.rda")
+## If you haven't installed the following two packages, uncomment and run the following two commands. Otherwise, ignore them.
+# install.packages("BiocManager")
+# BiocManager::install("trigger")
+
+require(trigger)
+data(yeast)
 
 marker <- t(yeast$marker)
 n <- dim(marker)[1]
