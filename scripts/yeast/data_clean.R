@@ -7,6 +7,10 @@ path <- "~/"
 path <- paste0(path, "2024.0691/scripts/")
 setwd(path)
 
+## if you not install these two package, you require the installation first (uncomment below two commands), otherwise you can ignore these two commands.
+# install.packages("BiocManager")
+# BiocManager::install("trigger")
+
 require(trigger)
 data(yeast)
 
