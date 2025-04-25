@@ -102,7 +102,7 @@ devtools::install_github("INFORMSJoC/2024.0691/src")
 #### (2) Real data analysis
 To obtain the real data result, run the following scripts from the subfolder "/yeast" in the scripts folder:
 
-> (a) First, run the script "data_clean.R" to obtain the screened data that translate "/data/yeast.rda" into "/output/yeast_preprocess_data.RData".
+> (a) First, run the script "data_clean.R" to obtain the screened data that translate "yeast.rda" into "/data/yeast_preprocess_data.RData".
 > ```R
 > source("scripts/yeast/data_clean.R") # clean the data and save the screened data as "yeast_preprocess_data.RData" into the data folder
 > ```
