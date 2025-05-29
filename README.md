@@ -15,9 +15,9 @@ If you find any bugs, please email Ruipeng Dong (<drp@ustc.edu.cn> or <drpoct@16
 
 To cite the contents of this repository, please cite both the paper and this repo, using their respective DOIs.
 
-https://doi.org/xxx/xxx
+https://doi.org/10.1287/ijoc.2024.0691
 
-https://doi.org/xxx/xxx.cd
+https://doi.org/10.1287/ijoc.2024.0691.cd
 
 Below is the BibTex for citing this snapshot of the repository.
 
@@ -27,8 +27,9 @@ Below is the BibTex for citing this snapshot of the repository.
   publisher = {INFORMS Journal on Computing},
   title     = {Fast Association Recovery in High Dimensions by Parallel Learning},
   year      = {2025},
-  doi       = {xxxx},
-  note      = {Available for download at: https://github.com/INFORMSJoC/xxxx},
+  doi       = {10.1287/ijoc.2024.0691.cd},
+  url       = {https://github.com/INFORMSJoC/2024.0691},
+  note      = {Available for download at https://github.com/INFORMSJoC/2024.0691},
 }  
 ```
 
